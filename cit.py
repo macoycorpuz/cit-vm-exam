@@ -8,11 +8,8 @@ def solution(totalMemory, foregroundApps, backgroundApps):
             sumOfMemory = fgApp[1] + bgApp[1]
             appMemories.append(sumOfMemory)
             apps.append([fgApp[0], bgApp[0]])
-            
-    if not apps:
-        return []
     
-    if min(appMemories) > totalMemory:
+    if not apps or min(appMemories) > totalMemory:
         return []
 
     for memory in appMemories:
